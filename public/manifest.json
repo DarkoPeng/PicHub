@@ -4,9 +4,9 @@
   "description": "图床上传工具，支持微博图床，七牛云，自定义图床接口",
   "version": "1.0",
   "browser_action": {
-    "default_icon": "icon.png",
     "default_popup": "index.html",
-    "default_title": "PicHub"
+    "default_title": "PicHub",
+    "default_icon": "favicon.ico"
   },
   "permissions": [
     "tabs", 
