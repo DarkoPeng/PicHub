@@ -56,7 +56,11 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
-  entry: [require.resolve('./polyfills'), paths.appIndexJs],
+  // entry: [require.resolve('./polyfills'), paths.appIndexJs],
+  entry: {
+    index: [require.resolve('./polyfills'), paths.appIndexJs],
+    options: [require.resolve('./polyfills'), paths.appOptionsJs],
+  },
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -94,6 +98,7 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      '@': path.resolve(__dirname, '../src/'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -244,6 +249,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+      chunks: ['index'],
+      filename: 'index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -257,6 +264,24 @@ module.exports = {
         minifyURLs: true,
       },
     }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: paths.appHtml,
+      chunks: ['options'],
+      filename: 'options.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      },
+    }),    
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
