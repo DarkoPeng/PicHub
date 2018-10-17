@@ -1,0 +1,21 @@
+.sidebar{
+  width: 25%;
+  flex: none;
+  border-right: 1px solid #97a8be;
+}
+.album-list{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.album-item{
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.album-item:nth-child(even){
+  background-color: #f8f8f8;
+}

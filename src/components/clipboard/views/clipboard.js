@@ -18,7 +18,7 @@ class Clipboard extends Component {
     return (
       <div className="clipboard">
         <p className="link">图片链接：</p>
-        <input type="text" className="input-link" ref={this.linkInput}/>
+        <input type="text" className="input-link" ref={this.linkInput} disabled/>
         <button className="button-copy" onClick={this.copyToClipboard}>
           点击复制
         </button>

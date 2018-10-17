@@ -1,0 +1,26 @@
+html,body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+div,span,input,button,h1,h2,h3,h4,h5{
+  margin: 0;
+  padding: 0;
+}
+#root{
+  background-color: #f9f9f9;
+  height: 100%;
+  width: 100%;
+}
+header{
+  text-align: center;
+}
+.content{
+  width: 880px;
+  height: 500px;
+  background-color: #fff;
+  border: 1px solid #97a8be;
+  margin: 20px auto 0;
+  display: flex;
+}
