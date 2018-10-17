@@ -48,6 +48,7 @@ class Upload extends Component {
         this.setState({
           linkUrl: body.data.url
         })
+        this.props.onUpload(body.data.url)
       })
     })
     .catch(error => console.error('Error', error));

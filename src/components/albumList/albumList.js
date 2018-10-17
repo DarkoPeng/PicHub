@@ -22,11 +22,13 @@ class albumList extends Component {
         payload: {}
       },{
         id: 3,
-        type: 'diy',
-        name: '自定义叫啥名',
+        type: 'smms',
+        name: 'sm.ms',
         method: 'POST',
-        apiUrl: '',
-        payload: {}
+        apiUrl: 'https://sm.ms/api/upload',
+        payload: {
+          smfile: '',
+        }
       }]
     }
   }

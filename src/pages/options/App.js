@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
-import {view as AlbumList} from '@/components/albumList';
-import {view as MainContent} from '@/components/mainContent'
+import  AlbumList from '@/components/albumList/albumList';
+import  MainContent from '@/components/mainContent/mainContent'
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    
+    this.state = {
+      id: 0
+    }
+
+  }
+
   render(){
     return (
       <div className="container">
@@ -11,6 +20,7 @@ class App extends Component {
         <main className="content">
           <AlbumList/>
           <MainContent/>
+          
         </main>
       </div>
     )
