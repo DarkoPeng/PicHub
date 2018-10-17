@@ -2,6 +2,7 @@
   width: 25%;
   flex: none;
   border-right: 1px solid #97a8be;
+  position: relative;
 }
 .album-list{
   margin: 0;
@@ -18,4 +19,19 @@
 }
 .album-item:nth-child(even){
   background-color: #f8f8f8;
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 88rpx;
+  border-top: 1px solid #f8f8f8;
+}
+.btn-add, .btn-reduce{
+  border: none;
+  width: 50px;
+  font-size: 28px;
+  -webkit-appearance: none;
+  outline: none;
+
 }

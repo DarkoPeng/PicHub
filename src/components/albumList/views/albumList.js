@@ -38,9 +38,13 @@ class albumList extends Component {
       <div className="sidebar">
         <ul className="album-list">
           {albumList.map(album => (
-            <li className="album-item">{album.name}</li>
+            <li className="album-item" key={album.id}>{album.name}</li>
           ))}
         </ul>
+        <div className="footer">
+          <button className="btn-add">+</button>
+          <button className="btn-reduce">-</button>
+        </div>
       </div>
     )
   }
